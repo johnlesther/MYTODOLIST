@@ -1,0 +1,7 @@
+{
+  "name": "TodoApplication",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

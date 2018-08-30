@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align:center;">
+      ADD ITEM
+    </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+ 
+<ion-content>
+<div class="container" ng-app="myApp">
+  <ion-list>
+    <h1 style="text-align: center;font-size: 18px;">
+    All fields are Required please fill up everything</h1>
+ 
+    <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" [(ngModel)]="title" required></ion-input>
+    </ion-item> 
+ 
+    <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text" [(ngModel)]="description" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Date</ion-label>
+       <ion-datetime displayFormat="MMM DD YYYY" max="2050-10-31" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Location</ion-label>
+        <ion-input type="text" [(ngModel)]="location" required ></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label>Progress</ion-label>
+      <ion-select [(ngModel)]="complete">
+        <ion-option value="finish">Done</ion-option>
+        <ion-option value="not finish">Not Yet</ion-option>
+      </ion-select>
+    </ion-item>
+      
+  </ion-list>
+ </div>
+  <button full ion-button [disabled]="(!description)||(!title)||(!location)||(!date)||(!complete)"  color="primary"  (click)="saveItem()" >Save</button>
+ 
+</ion-content>
